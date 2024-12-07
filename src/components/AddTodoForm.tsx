@@ -1,9 +1,15 @@
 import styled from "styled-components";
 import { useTodos } from "../contexts/TodosContext";
+import { useDarkMode } from "../contexts/DarkModeContext";
 
-const StyledInput = styled.input`
+interface StyledInputProps {
+  isDarkMode: boolean;
+}
+
+const StyledInput = styled.input<StyledInputProps>`
   border-radius: 6px;
-  background-color: #fff;
+  background-color: ${(props) =>
+    props.isDarkMode ? "var(--color-very-dark-blue)" : "#fff"};
   padding: 1rem 2rem;
   width: 100%;
   height: 5.6rem;
@@ -17,6 +23,8 @@ const StyledForm = styled.form`
 
 const AddTodoForm = () => {
   const { handleAddTodo } = useTodos();
+  const { darkMode } = useDarkMode();
+
   return (
     <StyledForm onSubmit={handleAddTodo}>
       <StyledInput
@@ -24,6 +32,7 @@ const AddTodoForm = () => {
         name="description"
         id="description"
         placeholder="Create a new todo..."
+        isDarkMode={darkMode}
       />
     </StyledForm>
   );

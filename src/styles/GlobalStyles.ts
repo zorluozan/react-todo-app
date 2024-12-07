@@ -44,6 +44,7 @@ body {
   transition: color 0.3s, background-color 0.3s;
   min-height: 100vh;
   font-size: 1.8rem;
+  font-weight: 400;
 }
 
 input,

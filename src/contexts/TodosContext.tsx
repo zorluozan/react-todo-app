@@ -107,7 +107,7 @@ const TodosProvider = ({ children }: Props) => {
 const useTodos = () => {
   const context = useContext(TodosContext);
   if (context === undefined)
-    throw new Error("Context is undefined outside of app");
+    throw new Error("TodosContext was used outside of the TodosProvider");
   return context;
 };
 
