@@ -12,8 +12,8 @@ interface StyledSectionProps {
 const StyledSection = styled.section<StyledSectionProps>`
   background-image: ${(props: StyledSectionProps) =>
     props.isDarkMode
-      ? "url('/bg-mobile-dark.jpg')"
-      : "url('/bg-mobile-light.jpg')"};
+      ? "url('./bg-mobile-dark.jpg')"
+      : "url('./bg-mobile-light.jpg')"};
   background-repeat: no-repeat;
   background-size: cover;
   height: 20rem;
@@ -22,8 +22,8 @@ const StyledSection = styled.section<StyledSectionProps>`
   @media (min-width: ${(props) => props.theme.breakpoints.tablet}) {
     background-image: ${(props: StyledSectionProps) =>
       props.isDarkMode
-        ? "url('/bg-desktop-dark.jpg')"
-        : "url('/bg-desktop-light.jpg')"};
+        ? "url('./bg-desktop-dark.jpg')"
+        : "url('./bg-desktop-light.jpg')"};
     height: 30rem;
   }
 `;
