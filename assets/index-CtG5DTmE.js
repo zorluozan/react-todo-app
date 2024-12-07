@@ -239,14 +239,14 @@ img {
   height: auto;
 }
 `,am=Oe.section`
-  background-image: ${i=>i.isDarkMode?"url('/bg-mobile-dark.jpg')":"url('/bg-mobile-light.jpg')"};
+  background-image: ${i=>i.isDarkMode?"url('./bg-mobile-dark.jpg')":"url('./bg-mobile-light.jpg')"};
   background-repeat: no-repeat;
   background-size: cover;
   height: 20rem;
   position: relative;
 
   @media (min-width: ${i=>i.theme.breakpoints.tablet}) {
-    background-image: ${i=>i.isDarkMode?"url('/bg-desktop-dark.jpg')":"url('/bg-desktop-light.jpg')"};
+    background-image: ${i=>i.isDarkMode?"url('./bg-desktop-dark.jpg')":"url('./bg-desktop-light.jpg')"};
     height: 30rem;
   }
 `,cm=Oe.div`
