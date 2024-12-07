@@ -48,13 +48,14 @@ const StyledClearButton = styled.button<StyledProps>`
 `;
 
 const FilterArea = () => {
-  const { filteredTodos, status, setStatus, handleResetCompletedTodos } =
+  const { filteredTodos, todos, status, setStatus, handleResetCompletedTodos } =
     useTodos();
   const { darkMode } = useDarkMode();
 
   const isDisableClearButton =
     filteredTodos.length === 0 ||
-    filteredTodos.filter((todo) => todo.isCompleted).length === 0;
+    filteredTodos.filter((todo) => todo.isCompleted).length === 0 ||
+    todos.length === 0;
   return (
     <StyledFilterArea>
       <StyledText>
@@ -64,7 +65,7 @@ const FilterArea = () => {
         <StyledOption
           key={index}
           onClick={() => setStatus(option)}
-          disabled={filteredTodos.length === 0}
+          disabled={todos.length === 0}
           className={status === option ? "active" : ""}
           isDarkMode={darkMode}
         >

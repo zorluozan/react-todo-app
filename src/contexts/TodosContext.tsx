@@ -6,6 +6,7 @@ type Props = {
 };
 
 type TodosContextType = {
+  todos: ITodo[];
   filteredTodos: ITodo[];
   handleAddTodo: (e: React.FormEvent<HTMLFormElement>) => void;
   handleDeleteTodo: (id: string) => void;
@@ -19,6 +20,7 @@ type TodosContextType = {
 };
 
 const TodosContext = createContext<TodosContextType>({
+  todos: [],
   filteredTodos: [],
   handleAddTodo: () => {},
   handleDeleteTodo: () => {},
@@ -90,6 +92,7 @@ const TodosProvider = ({ children }: Props) => {
   const filteredTodos = handleFilterStatus();
 
   const value = {
+    todos,
     filteredTodos,
     handleAddTodo,
     handleDeleteTodo,
